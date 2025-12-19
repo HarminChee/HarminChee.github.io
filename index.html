@@ -22,7 +22,7 @@
         display:flex;
         justify-content:center;
         align-items:center;
-        gap:22px;
+        gap:18px;
         flex-wrap:wrap;
         margin-top:14px;
       }
@@ -31,8 +31,6 @@
         display:inline-flex;
         align-items:center;
         justify-content:center;
-        width:56px;
-        height:56px;
         text-decoration:none;
         color:var(--icon-blue);
         line-height:1;
@@ -42,42 +40,43 @@
         opacity:0.85;
       }
 
-      .iconbar a i,
-      .iconbar a span{
-        display:block;
-        line-height:1;
+      .iconbar .icon-square,
+      .iconbar .icon-circle{
+        width:50px;
+        height:50px;
+        color:#fff;
       }
 
       .iconbar .icon-square{
         background:var(--icon-blue);
-        border-radius:14px;
-        color:#fff;
+        border-radius:12px;
       }
 
       .iconbar .icon-circle{
         background:var(--icon-blue);
         border-radius:999px;
-        color:#fff;
       }
 
       .iconbar .fa-envelope,
       .iconbar .fa-linkedin-in,
       .iconbar .fa-github{
-        font-size:34px;
+        font-size:28px;
       }
 
       .iconbar .fa-x-twitter{
-        font-size:36px;
+        font-size:30px;
       }
 
       .iconbar .ai-google-scholar{
-        font-size:52px;
+        font-size:46px;
+        color:var(--icon-blue);
       }
 
       .iconbar .cvtext{
-        font-size:34px;
+        font-size:30px;
         font-weight:800;
         letter-spacing:-0.5px;
+        color:var(--icon-blue);
       }
 
       .profile-photo{
@@ -140,7 +139,7 @@
       }
 
       .edu-logo{
-        height:52px;
+        height:62px;
         width:auto;
         display:inline-block;
         vertical-align:middle;
@@ -148,6 +147,10 @@
 
       .edu-logo.ucsd{
         margin-right:6px;
+      }
+
+      .edu-logo.leeds{
+        margin-right:12px;
       }
     </style>
   </head>
@@ -244,7 +247,7 @@
                       </td>
                       <td class="edu-right">
                         <a href="https://www.leeds.ac.uk/">
-                          <img class="edu-logo" src="images/logos/leeds.png" alt="University of Leeds">
+                          <img class="edu-logo leeds" src="images/logos/leeds.png" alt="University of Leeds">
                         </a>
                       </td>
                     </tr>
@@ -263,6 +266,7 @@
           </tbody></table>
 
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
 
               <tbody>
 
