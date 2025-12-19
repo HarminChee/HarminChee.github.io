@@ -22,17 +22,17 @@
         display:flex;
         justify-content:center;
         align-items:center;
-        gap:18px;
+        gap:16px;
         flex-wrap:wrap;
-        margin-top:14px;
+        margin-top:12px;
       }
 
       .iconbar a{
         display:inline-flex;
         align-items:center;
         justify-content:center;
-        width:50px;
-        height:50px;
+        width:42px;
+        height:42px;
         text-decoration:none;
         color:var(--icon-blue);
         line-height:1;
@@ -49,16 +49,16 @@
       }
 
       .iconbar .icon-square{
-        width:48px;
-        height:48px;
+        width:38px;
+        height:38px;
         background:var(--icon-blue);
-        border-radius:12px;
+        border-radius:10px;
         color:#fff;
       }
 
       .iconbar .icon-circle{
-        width:48px;
-        height:48px;
+        width:40px;
+        height:40px;
         background:var(--icon-blue);
         border-radius:999px;
         color:#fff;
@@ -66,26 +66,26 @@
 
       .iconbar .fa-envelope,
       .iconbar .fa-linkedin-in{
-        font-size:30px;
+        font-size:24px;
       }
 
       .iconbar .fa-x-twitter{
-        font-size:32px;
+        font-size:28px;
       }
 
       .iconbar .ai-google-scholar{
-        font-size:46px;
+        font-size:40px;
       }
 
       .iconbar .cvtext{
-        font-size:30px;
+        font-size:26px;
         font-weight:800;
-        letter-spacing:-0.5px;
+        letter-spacing:-0.4px;
       }
 
       .iconbar .gh-mark{
-        width:32px;
-        height:32px;
+        width:26px;
+        height:26px;
         display:block;
       }
 
@@ -94,9 +94,15 @@
         max-width:100%;
         height:auto;
         border-radius:0;
-        margin-top:26px;
+        margin-top:34px;
         object-fit:contain;
         display:block;
+        pointer-events:none;
+        user-select:none;
+      }
+
+      .profile-wrap{
+        pointer-events:none;
       }
 
       .edu{
@@ -149,7 +155,7 @@
       }
 
       .edu-logo{
-        height:58px;
+        height:87px;
         width:auto;
         display:inline-block;
         vertical-align:middle;
@@ -159,8 +165,16 @@
         margin-right:6px;
       }
 
+      .edu-logo.cuhk{
+        transform:translateX(8px);
+      }
+
       .edu-logo.leeds{
-        transform:translateX(-10px);
+        transform:translateX(-14px);
+      }
+
+      .iconbar .gh-mark path{
+        fill:#ffffff;
       }
     </style>
   </head>
@@ -207,16 +221,16 @@
 
                   <a class="icon-circle" href="https://github.com/HarminChee" aria-label="GitHub" title="GitHub">
                     <svg class="gh-mark" viewBox="0 0 24 24" role="img" aria-hidden="true">
-                      <path fill="#ffffff" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.61-3.37-1.18-3.37-1.18-.45-1.14-1.11-1.44-1.11-1.44-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.93.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.26-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.6 9.6 0 0 1 12 6.8c.85 0 1.71.11 2.51.33 1.9-1.29 2.74-1.02 2.74-1.02.56 1.38.21 2.39.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/>
+                      <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.61-3.37-1.18-3.37-1.18-.45-1.14-1.11-1.44-1.11-1.44-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.93.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.26-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.6 9.6 0 0 1 12 6.8c.85 0 1.71.11 2.51.33 1.9-1.29 2.74-1.02 2.74-1.02.56 1.38.21 2.39.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/>
                     </svg>
                   </a>
                 </div>
               </td>
 
               <td style="padding:2.5%;width:37%;max-width:37%;vertical-align:top;">
-                <a href="images/haominqi.jpg">
-                  <img class="profile-photo" alt="profile photo" src="images/haominqi.jpg" class="hoverZoomLink">
-                </a>
+                <span class="profile-wrap" aria-hidden="true">
+                  <img class="profile-photo" alt="profile photo" src="images/haominqi.jpg">
+                </span>
               </td>
             </tr>
 
@@ -246,7 +260,7 @@
                       </td>
                       <td class="edu-right">
                         <a href="https://www.ie.cuhk.edu.hk/programmes/bsc-in-mieg/">
-                          <img class="edu-logo" src="images/logos/cuhk.png" alt="CUHK">
+                          <img class="edu-logo cuhk" src="images/logos/cuhk.png" alt="CUHK">
                         </a>
                       </td>
                     </tr>
@@ -278,6 +292,7 @@
           </tbody></table>
 
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
 
               <tbody>
 
