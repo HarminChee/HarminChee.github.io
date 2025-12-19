@@ -7,7 +7,7 @@
     <meta name="author" content="Harmin Chee">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="images/my.png" type="image/png">
+    <link rel="shortcut icon" href="images/my.jpg" type="image/jpg">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
@@ -16,6 +16,7 @@
     <style>
       :root{
         --icon-blue:#1a73e8;
+        --rule:#e6e6e6;
       }
 
       html{
@@ -47,11 +48,17 @@
         display:flex;
         align-items:center;
         gap:8px;
+        padding-bottom:8px;
+        border-bottom:1px solid var(--rule);
       }
 
       .section-icon{
         font-size:20px;
         line-height:1;
+      }
+
+      .news-to-edu-gap{
+        margin-bottom:34px;
       }
 
       .iconbar{
@@ -326,18 +333,60 @@
         line-height:1.6;
       }
 
-      .ig-block{
-    margin-top:12px;
-    max-width:300px;
-  }
-  .ig-block .instagram-media{
-    max-width:260px !important;
-    min-width:120px !important;
-    border-radius:10px !important;
-  }
-
       .ig-inline-link{
         word-break:break-word;
+      }
+
+      .ig-grid{
+        margin-top:12px;
+        display:grid;
+        grid-template-columns:repeat(4, 1fr);
+        gap:10px;
+        width:100%;
+        align-items:start;
+      }
+
+      .ig-card{
+        width:100%;
+        max-width:100%;
+      }
+
+      .ig-card .instagram-media{
+        margin:0 !important;
+        width:100% !important;
+        min-width:0 !important;
+        max-width:100% !important;
+        border-radius:10px !important;
+        box-shadow:0 1px 4px rgba(0,0,0,0.08) !important;
+      }
+
+      @media (max-width: 920px){
+        .ig-grid{
+          grid-template-columns:repeat(2, 1fr);
+          gap:10px;
+        }
+      }
+
+      @media (max-width: 520px){
+        .ig-grid{
+          grid-template-columns:1fr;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce){
+        *{
+          scroll-behavior:auto !important;
+        }
+      }
+
+      .notranslate{
+        -webkit-transform:translateZ(0);
+        transform:translateZ(0);
+      }
+
+      .notranslate,
+      .notranslate *{
+        font-variant-ligatures:none;
       }
     </style>
   </head>
@@ -366,7 +415,7 @@
                     I am currently seeking summer internship opportunities in 2026.
                   </p>
 
-                  <div class="iconbar">
+                  <div class="iconbar notranslate" translate="no">
                     <a class="icon-square email" href="mailto:h5qi@ucsd.edu" aria-label="Email" title="Email">
                       <i class="fa-solid fa-envelope"></i>
                     </a>
@@ -403,7 +452,7 @@
               <tr style="padding:0px">
                 <td colspan="2" style="padding:0 2.0% 2.0% 2.0%;vertical-align:middle;">
 
-                  <div class="section-block">
+                  <div class="section-block news-to-edu-gap">
                     <h2><span class="section-icon">📣</span><span>News</span></h2>
                     <ul class="news-list">
                       <li>Nov. 2025: Two papers accepted by <em>IEEE BigData 2025</em> and <em>IEEE CCNC 2025</em>, respectively.</li>
@@ -465,7 +514,7 @@
             <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
                 <td style="padding:16px 16px 8px 16px;width:100%;vertical-align:middle">
-                  <h2 style="margin:0;display:flex;align-items:center;gap:8px;">
+                  <h2 style="margin:0;display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--rule);">
                     <span class="section-icon">📜</span><span>Selected Publications</span>
                   </h2>
                 </td>
@@ -605,7 +654,7 @@
             <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
                 <td style="padding:16px 16px 8px 16px;width:100%;vertical-align:middle">
-                  <h2 style="margin:0;display:flex;align-items:center;gap:8px;">
+                  <h2 style="margin:0;display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--rule);">
                     <span class="section-icon">🌟</span><span>Misc</span>
                   </h2>
                 </td>
@@ -613,17 +662,25 @@
               <tr>
                 <td style="padding:0 16px 16px 16px;width:100%;vertical-align:middle">
                   <p class="misc-text">
-                    I enjoy fitness training, skiing, backpacking, landscape photography, painting, and cooking. In my spare time, I share my life and daily moments on Instagram—feel free to follow:
+                    I am passionate about fitness, skiing, and backpacking, as well as landscape photography, painting, and cooking. In my spare time, I share my life and daily moments on Instagram—feel free to follow:
                     <a class="ig-inline-link" href="https://www.instagram.com/harminchee/">instagram.com/harminchee</a>.
                   </p>
 
-                  <div class="ig-block">
-  <blockquote class="instagram-media"
-    data-instgrm-permalink="https://www.instagram.com/p/DHLoA_spOzS/?img_index=1"
-    data-instgrm-version="14">
-  </blockquote>
-  <script async src="https://www.instagram.com/embed.js"></script>
-</div>
+                  <div class="ig-grid">
+                    <div class="ig-card">
+                      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DQ8f5szEpJq/?img_index=3" data-instgrm-version="14"></blockquote>
+                    </div>
+                    <div class="ig-card">
+                      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DKbn7uiJlz0/?img_index=3" data-instgrm-version="14"></blockquote>
+                    </div>
+                    <div class="ig-card">
+                      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DHLoA_spOzS/?img_index=1" data-instgrm-version="14"></blockquote>
+                    </div>
+                    <div class="ig-card">
+                      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DFszcs5TVqj/?img_index=1" data-instgrm-version="14"></blockquote>
+                    </div>
+                  </div>
+                  <script async src="https://www.instagram.com/embed.js"></script>
 
                 </td>
               </tr>
