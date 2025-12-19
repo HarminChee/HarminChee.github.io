@@ -18,7 +18,7 @@
         --icon-blue:#1a73e8;
       }
 
-      .iconbar{
+.iconbar{
   display:flex;
   justify-content:center;
   align-items:center;
@@ -84,15 +84,31 @@
   display:block;
 }
 
-/* per-icon overrides (place after the default rule to avoid being overridden) */
-.iconbar .fa-envelope,
-.iconbar .fa-linkedin-in{
+/* shrink the OUTER squares/circles for Email + LinkedIn only */
+.iconbar a.email .icon-square,
+.iconbar a.linkedin .icon-square{
+  width:22px !important;
+  height:22px !important;
+  border-radius:7px !important;
+}
+
+.iconbar a.email .icon-circle,
+.iconbar a.linkedin .icon-circle{
+  width:26px !important;
+  height:26px !important;
+}
+
+/* (optional) keep the glyphs readable inside the smaller containers */
+.iconbar a.email i,
+.iconbar a.linkedin i{
   font-size:18px !important;
 }
 
+/* enlarge Google Scholar glyph (keeps outer container unchanged) */
 .iconbar .ai-google-scholar{
   font-size:28px !important;
 }
+
 
 
 
