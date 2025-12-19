@@ -84,29 +84,54 @@
   display:block;
 }
 
-/* shrink the OUTER squares/circles for Email + LinkedIn only */
-.iconbar a.email .icon-square,
-.iconbar a.linkedin .icon-square{
+/* make ALL icons slightly bigger by default */
+.iconbar .icon-square{
+  width:30px !important;
+  height:30px !important;
+  border-radius:10px !important;
+}
+.iconbar .icon-circle{
+  width:34px !important;
+  height:34px !important;
+}
+.iconbar .fa-x-twitter,
+.iconbar .ai-google-scholar,
+.iconbar .fa-github{
+  font-size:24px !important;
+}
+.iconbar .gh-mark{
   width:22px !important;
   height:22px !important;
-  border-radius:7px !important;
+}
+.iconbar .cvtext{
+  font-size:21px !important;
 }
 
-.iconbar a.email .icon-circle,
+/* keep Email + LinkedIn EXACTLY as before (outer + inner) */
+.iconbar a.email .icon-square{
+  width:28px !important;
+  height:28px !important;
+  border-radius:9px !important;
+}
+.iconbar a.email .icon-circle{
+  width:32px !important;
+  height:32px !important;
+}
+.iconbar a.email .fa-envelope{
+  font-size:22px !important;
+}
+
+.iconbar a.linkedin .icon-square{
+  width:28px !important;
+  height:28px !important;
+  border-radius:9px !important;
+}
 .iconbar a.linkedin .icon-circle{
-  width:26px !important;
-  height:26px !important;
+  width:32px !important;
+  height:32px !important;
 }
-
-/* (optional) keep the glyphs readable inside the smaller containers */
-.iconbar a.email i,
-.iconbar a.linkedin i{
-  font-size:18px !important;
-}
-
-/* enlarge Google Scholar glyph (keeps outer container unchanged) */
-.iconbar .ai-google-scholar{
-  font-size:28px !important;
+.iconbar a.linkedin .fa-linkedin-in{
+  font-size:22px !important;
 }
 
 
