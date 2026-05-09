@@ -25,6 +25,20 @@
 
       body{
         margin:0;
+        zoom:0.92;
+      }
+
+      @supports not (zoom: 1){
+        body{
+          overflow-x:hidden;
+        }
+
+        .page-wrap{
+          transform:scale(0.92);
+          transform-origin:top center;
+          width:108.695652%;
+          max-width:1282.608696px;
+        }
       }
 
       .page-wrap{
@@ -201,11 +215,11 @@
       }
 
       .profile-photo{
-        width:75%;
-        max-width:280px;
+        width:70%;
+        max-width:250px;
         height:auto;
         border-radius:14px;
-        margin-top:38px;
+        margin-top:48px;
         margin-left:auto;
         margin-right:auto;
         object-fit:contain;
@@ -325,6 +339,27 @@
         letter-spacing:-0.3px;
       }
 
+      .intro-text,
+      .intro-text a,
+      .news-list,
+      .news-list li,
+      .news-list li a,
+      .news-list li em,
+      .pub-authors,
+      .pub-authors a,
+      .pub-authors strong,
+      .misc-text,
+      .misc-text a{
+        font-size:17px !important;
+      }
+
+      .pub-venue,
+      .pub-venue a,
+      .pub-venue strong,
+      .pub-venue em{
+        font-size:16px !important;
+      }
+
       .news-list{
         margin:0;
         padding-left:18px;
@@ -372,25 +407,14 @@
         line-height:1.25;
       }
 
-      .intro-text,
-      .intro-text a,
-      .news-list,
-      .news-list li,
-      .news-list li a,
-      .news-list li em,
-      .pub-authors,
-      .pub-authors a,
-      .pub-authors strong,
-      .misc-text,
-      .misc-text a{
-        font-size:17px !important;
-      }
-
-      .pub-venue,
-      .pub-venue a,
-      .pub-venue strong,
-      .pub-venue em{
-        font-size:16px !important;
+      .pub-teaser{
+        width:200px;
+        height:150px;
+        max-width:100%;
+        display:block;
+        margin:0 auto;
+        object-fit:contain;
+        border-radius:10px;
       }
 
       @media (max-width: 920px){
@@ -557,7 +581,7 @@
 
               <tr>
                 <td style="padding:20px;width:25%;vertical-align:middle">
-                  <img src="images/pocgym.jpg" alt="POCGYM teaser" style="width:180px;height:135px;max-width:100%;display:block;margin:0 auto;object-fit:contain;border-radius:10px;">
+                  <img class="pub-teaser" src="images/pocgym.jpg" alt="POCGYM teaser">
                 </td>
                 <td style="padding:20px;width:75%;vertical-align:middle">
                   <a href="data/poc.pdf" style="text-decoration:none;">
@@ -578,7 +602,7 @@
 
               <tr>
                 <td style="padding:20px;width:25%;vertical-align:middle">
-                  <img src="images/papers/topo.png" alt="TopoEdge teaser" style="width:180px;height:135px;max-width:100%;display:block;margin:0 auto;object-fit:contain;border-radius:10px;">
+                  <img class="pub-teaser" src="images/papers/topo.png" alt="TopoEdge teaser">
                 </td>
                 <td style="padding:20px;width:75%;vertical-align:middle">
                   <a href="https://arxiv.org/abs/2603.00569" style="text-decoration:none;">
@@ -599,7 +623,7 @@
 
               <tr>
                 <td style="padding:20px;width:25%;vertical-align:middle">
-                  <img src="images/papers/verirag.png" alt="VeriRAG teaser" style="width:180px;height:135px;max-width:100%;display:block;margin:0 auto;object-fit:contain;border-radius:10px;">
+                  <img class="pub-teaser" src="images/papers/verirag.png" alt="VeriRAG teaser">
                 </td>
                 <td style="padding:20px;width:75%;vertical-align:middle">
                   <a href="https://arxiv.org/abs/2507.15664v2" style="text-decoration:none;">
@@ -620,7 +644,7 @@
 
               <tr>
                 <td style="padding:20px;width:25%;vertical-align:middle">
-                  <img src="images/papers/graph.png" alt="GraphCue teaser" style="width:180px;height:135px;max-width:100%;display:block;margin:0 auto;object-fit:contain;border-radius:10px;">
+                  <img class="pub-teaser" src="images/papers/graph.png" alt="GraphCue teaser">
                 </td>
                 <td style="padding:20px;width:75%;vertical-align:middle">
                   <a href="https://arxiv.org/abs/2512.17371" style="text-decoration:none;">
@@ -641,7 +665,7 @@
 
               <tr>
                 <td style="padding:20px;width:25%;vertical-align:middle">
-                  <img src="images/papers/govern.png" alt="Governance-Aware teaser" style="width:180px;height:135px;max-width:100%;display:block;margin:0 auto;object-fit:contain;border-radius:10px;">
+                  <img class="pub-teaser" src="images/papers/govern.png" alt="Governance-Aware teaser">
                 </td>
                 <td style="padding:20px;width:75%;vertical-align:middle">
                   <a href="https://arxiv.org/abs/2512.17344" style="text-decoration:none;">
@@ -662,7 +686,7 @@
 
               <tr>
                 <td style="padding:20px;width:25%;vertical-align:middle">
-                  <img src="images/papers/hybrid.png" alt="Hybrid and Unitary PEFT teaser" style="width:180px;height:135px;max-width:100%;display:block;margin:0 auto;object-fit:contain;border-radius:10px;">
+                  <img class="pub-teaser" src="images/papers/hybrid.png" alt="Hybrid and Unitary PEFT teaser">
                 </td>
                 <td style="padding:20px;width:75%;vertical-align:middle">
                   <a href="https://arxiv.org/abs/2507.18076" style="text-decoration:none;">
@@ -683,7 +707,7 @@
 
               <tr>
                 <td style="padding:20px;width:25%;vertical-align:middle">
-                  <img src="images/papers/aba.png" alt="ABA Therapy teaser" style="width:180px;height:135px;max-width:100%;display:block;margin:0 auto;object-fit:contain;border-radius:10px;">
+                  <img class="pub-teaser" src="images/papers/aba.png" alt="ABA Therapy teaser">
                 </td>
                 <td style="padding:20px;width:75%;vertical-align:middle">
                   <a href="https://ieeexplore.ieee.org/abstract/document/11129621" style="text-decoration:none;">
