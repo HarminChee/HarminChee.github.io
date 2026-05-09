@@ -33,7 +33,6 @@
   margin-left:auto;
   margin-right:auto;
 }
-
       .content-pad{
         padding:0 1.2%;
       }
@@ -197,16 +196,18 @@
       }
 
       .profile-photo{
-        width:80%;
-        max-width:80%;
-        height:auto;
-        border-radius:0;
-        margin-top:38px;
-        object-fit:contain;
-        display:block;
-        pointer-events:none;
-        user-select:none;
-      }
+  width:80%;
+  max-width:300px;
+  height:auto;
+  border-radius:0;
+  margin-top:38px;
+  margin-left:auto;
+  margin-right:auto;
+  object-fit:contain;
+  display:block;
+  pointer-events:none;
+  user-select:none;
+}
 
       .profile-wrap{
         pointer-events:none;
@@ -338,41 +339,48 @@
       }
 
       .ig-grid{
-        margin-top:12px;
-        display:grid;
-        grid-template-columns:repeat(4, minmax(300px, 1fr));
-        gap:14px;
-        width:100%;
-        align-items:start;
-      }
+  margin-top:12px;
+  display:grid;
+  grid-template-columns:repeat(4, minmax(280px, 1fr));
+  gap:12px;
+  width:min(1230px, calc(100vw - 64px));
+  max-width:1230px;
+  margin-left:50%;
+  transform:translateX(-50%);
+  align-items:start;
+}
 
-      .ig-card{
-        width:100%;
-        max-width:100%;
-        min-height:620px;
-      }
+.ig-card{
+  width:100%;
+  max-width:100%;
+  min-height:620px;
+}
 
-      .ig-card .instagram-media{
-        margin:0 auto !important;
-        width:100% !important;
-        min-width:0 !important;
-        max-width:100% !important;
-        border-radius:10px !important;
-        box-shadow:0 1px 4px rgba(0,0,0,0.08) !important;
-      }
+.ig-card .instagram-media{
+  margin:0 auto !important;
+  width:100% !important;
+  min-width:0 !important;
+  max-width:100% !important;
+  border-radius:10px !important;
+  box-shadow:0 1px 4px rgba(0,0,0,0.08) !important;
+}
 
-      @media (max-width: 1300px){
-        .ig-grid{
-          grid-template-columns:repeat(2, minmax(300px, 1fr));
-          gap:16px;
-        }
-      }
+@media (max-width: 1260px){
+  .ig-grid{
+    width:100%;
+    max-width:100%;
+    margin-left:0;
+    transform:none;
+    grid-template-columns:repeat(2, minmax(300px, 1fr));
+    gap:14px;
+  }
+}
 
-      @media (max-width: 700px){
-        .ig-grid{
-          grid-template-columns:1fr;
-        }
-      }
+@media (max-width: 700px){
+  .ig-grid{
+    grid-template-columns:1fr;
+  }
+}
 
       @media (prefers-reduced-motion: reduce){
         *{
