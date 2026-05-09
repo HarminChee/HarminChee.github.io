@@ -1,729 +1,752 @@
-<meta name="author" content="Harmin Chee">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="shortcut icon" href="images/1.png" type="image/png">
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-
-<style>
-  :root{
-    --icon-blue:#1a73e8;
-    --rule:#e6e6e6;
-  }
-
-  html{
-    font-size:110%;
-  }
-
-  body{
-    margin:0;
-  }
-
-  .page-wrap{
-    width:100%;
-    max-width:1040px;
-    margin-left:auto;
-    margin-right:auto;
-  }
-
-  .content-pad{
-    padding:0 1.2%;
-  }
-
-  .section-block{
-    margin-top:18px;
-  }
-
-  .section-block h2{
-    margin:0 0 10px 0;
-    font-size:22px;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    padding-bottom:8px;
-    border-bottom:1px solid var(--rule);
-  }
-
-  .section-icon{
-    font-size:20px;
-    line-height:1;
-  }
-
-  .news-to-edu-gap{
-    margin-bottom:34px;
-  }
-
-  .iconbar{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:7px;
-    flex-wrap:wrap;
-    margin-top:12px;
-  }
-
-  .iconbar a{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:38px;
-    height:38px;
-    text-decoration:none;
-    color:var(--icon-blue);
-    line-height:1;
-  }
-
-  .iconbar a:hover{
-    opacity:0.85;
-  }
-
-  .iconbar a i,
-  .iconbar a span{
-    display:block;
-    line-height:1;
-  }
-
-  .iconbar .icon-square{
-    width:28px;
-    height:28px;
-    background:var(--icon-blue);
-    border-radius:9px;
-    color:#fff;
-  }
-
-  .iconbar .icon-circle{
-    width:32px;
-    height:32px;
-    background:var(--icon-blue);
-    border-radius:999px;
-    color:#fff;
-  }
-
-  .iconbar .fa-envelope,
-  .iconbar .fa-linkedin-in,
-  .iconbar .fa-x-twitter,
-  .iconbar .ai-google-scholar,
-  .iconbar .fa-github{
-    font-size:22px;
-  }
-
-  .iconbar .cvtext{
-    font-size:20px;
-    font-weight:800;
-    letter-spacing:-0.3px;
-  }
-
-  .iconbar .gh-mark{
-    width:20px;
-    height:20px;
-    display:block;
-  }
-
-  .iconbar .icon-square{
-    width:30px !important;
-    height:30px !important;
-    border-radius:10px !important;
-  }
-
-  .iconbar .icon-circle{
-    width:34px !important;
-    height:34px !important;
-  }
-
-  .iconbar .fa-x-twitter,
-  .iconbar .ai-google-scholar,
-  .iconbar .fa-github{
-    font-size:24px !important;
-  }
-
-  .iconbar .gh-mark{
-    width:22px !important;
-    height:22px !important;
-  }
-
-  .iconbar .cvtext{
-    font-size:21px !important;
-  }
-
-  .iconbar a.email .icon-square{
-    width:28px !important;
-    height:28px !important;
-    border-radius:9px !important;
-  }
-
-  .iconbar a.email .icon-circle{
-    width:32px !important;
-    height:32px !important;
-  }
-
-  .iconbar a.linkedin .icon-square{
-    width:28px !important;
-    height:28px !important;
-    border-radius:9px !important;
-  }
-
-  .iconbar a.linkedin .icon-circle{
-    width:32px !important;
-    height:32px !important;
-  }
-
-  .iconbar a.email .fa-envelope{
-    font-size:19px !important;
-  }
-
-  .iconbar a.linkedin .fa-linkedin-in{
-    font-size:19px !important;
-  }
-
-  .iconbar .ai-google-scholar{
-    font-size:26px !important;
-  }
-
-  .iconbar .gh-mark{
-    width:26px !important;
-    height:26px !important;
-  }
-
-  .iconbar .fa-github{
-    font-size:26px !important;
-  }
-
-  .profile-photo{
-    width:80%;
-    max-width:80%;
-    height:auto;
-    border-radius:0;
-    margin-top:38px;
-    object-fit:contain;
-    display:block;
-    pointer-events:none;
-    user-select:none;
-  }
-
-  .profile-wrap{
-    pointer-events:none;
-  }
-
-  .edu{
-    margin-top:0;
-  }
-
-  .edu table{
-    width:100%;
-    border:0;
-    border-spacing:0;
-    border-collapse:separate;
-  }
-
-  .edu td{
-    padding:10px 0;
-    vertical-align:middle;
-  }
-
-  .edu-left{
-    text-align:left;
-  }
-
-  .edu-right{
-    text-align:right;
-    width:1%;
-    white-space:nowrap;
-  }
-
-  .edu-degree{
-    font-size:16px;
-    font-weight:400;
-    margin:0;
-  }
-
-  .edu-school{
-    font-size:16px;
-    font-weight:400;
-    margin:2px 0 0 0;
-  }
-
-  .edu-years{
-    font-size:14px;
-    color:#666;
-    margin:2px 0 0 0;
-  }
-
-  .edu-logo{
-    width:auto;
-    display:inline-block;
-    vertical-align:middle;
-  }
-
-  .edu-logo.ucsd{
-    height:95px;
-    margin-right:6px;
-  }
-
-  .edu-logo.cuhk{
-    transform:translateX(4px);
-    height:88px;
-  }
-
-  .edu-logo.leeds{
-    height:98px;
-    transform:translateX(-14px);
-  }
-
-  .iconbar .gh-mark path{
-    fill:#ffffff;
-  }
-
-  .iconbar{
-    --box:35px;
-    --ink:24px;
-  }
-
-  .iconbar a{
-    width:var(--box);
-    height:var(--box);
-  }
-
-  .iconbar .icon-square,
-  .iconbar .icon-circle{
-    width:var(--box);
-    height:var(--box);
-  }
-
-  .iconbar i{
-    font-size:var(--ink);
-  }
-
-  .iconbar .fa-x-twitter{
-    font-size:var(--ink);
-  }
-
-  .iconbar .ai-google-scholar{
-    font-size:var(--ink);
-  }
-
-  .iconbar .fa-github{
-    font-size:var(--ink);
-  }
-
-  .iconbar .cvtext{
-    font-size:var(--ink);
-    font-weight:800;
-    letter-spacing:-0.3px;
-  }
-
-  .news-list{
-    margin:0;
-    padding-left:18px;
-  }
-
-  .news-list li{
-    margin:6px 0;
-  }
-
-  .misc-text{
-    margin:0;
-    line-height:1.6;
-  }
-
-  .ig-inline-link{
-    word-break:break-word;
-  }
-
-  .ig-grid{
-    margin-top:12px;
-    display:grid;
-    grid-template-columns:repeat(4, 1fr);
-    gap:10px;
-    width:100%;
-    align-items:start;
-  }
-
-  .ig-card{
-    width:100%;
-    max-width:100%;
-  }
-
-  .ig-card .instagram-media{
-    margin:0 !important;
-    width:100% !important;
-    min-width:0 !important;
-    max-width:100% !important;
-    border-radius:10px !important;
-    box-shadow:0 1px 4px rgba(0,0,0,0.08) !important;
-  }
-
-  @media (max-width: 920px){
-    .ig-grid{
-      grid-template-columns:repeat(2, 1fr);
-      gap:10px;
-    }
-  }
-
-  @media (max-width: 520px){
-    .ig-grid{
-      grid-template-columns:1fr;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    *{
-      scroll-behavior:auto !important;
-    }
-  }
-
-  .notranslate{
-    -webkit-transform:translateZ(0);
-    transform:translateZ(0);
-  }
-
-  .notranslate,
-  .notranslate *{
-    font-variant-ligatures:none;
-  }
-</style>
-
-              <p>
-                I am a master student at <a href="https://ucsd.edu/">UC San Diego</a>, advised by <a href="https://shangjingbo1226.github.io/">Prof. Jingbo Shang</a>. I am now also working with <a href="https://chengpeng-wang.github.io/">Chengpeng Wang</a>. Previously, I received my Bachelor's degree from <a href="https://www.cuhk.edu.hk/chinese/index.html#">The Chinese University of Hong Kong</a>, where I was advised by <a href="https://www.ie.cuhk.edu.hk/faculty/liew-soung-chang/">Prof. Soung Chang Liew</a> and <a href="https://www.ie.cuhk.edu.hk/faculty/chan-yuen-yan-rosanna/">Prof. Rosanna Yuen-Yan Chan</a>. Prior to that, I worked with <a href="https://wasn.csie.ncu.edu.tw/advisor">Prof. Min-Te (Peter) Sun</a> at National Central University and <a href="https://aicvlab2019.wordpress.com/">Prof. Jun Wei Hsieh</a> at National Yang Ming Chiao Tung University, Taiwan.
-              </p>
-
-              <p>
-                My research interests lie at the intersection of Machine Learning and Software Engineering. I focus on improving the code generation capabilities of large language models (LLMs) and agentic AI; applying LLMs for program verification, repair, and quality evaluation; LLMs security and auditable code intelligent agents; and efficient reasoning and training for LLMs. My goal is to develop intelligent code systems to handle complex and real-world problems.
-              </p>
-
-              <p>
-                I will be joining Microsoft this summer as a research intern, where I will work on coding agents and benchmarking evaluation.
-              </p>
-
-              <div class="iconbar notranslate" translate="no">
-                <a class="icon-square email" href="mailto:h5qi@ucsd.edu" aria-label="Email" title="Email">
-                  <i class="fa-solid fa-envelope"></i>
-                </a>
-
-                <a href="data/CV.pdf" aria-label="CV" title="CV">
-                  <span class="cvtext">CV</span>
-                </a>
-
-                <a href="https://scholar.google.com/citations?user=GgVymP0AAAAJ&hl=en" aria-label="Google Scholar" title="Google Scholar">
-                  <i class="ai ai-google-scholar"></i>
-                </a>
-
-                <a class="icon-square linkedin" href="https://www.linkedin.com/in/harminchee/" aria-label="LinkedIn" title="LinkedIn">
-                  <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-
-                <a href="https://x.com/HarminChee789" aria-label="X" title="X">
-                  <i class="fa-brands fa-x-twitter"></i>
-                </a>
-
-                <a href="https://github.com/HarminChee" aria-label="GitHub" title="GitHub">
-                  <i class="fa-brands fa-github"></i>
-                </a>
-              </div>
-            </td>
-
-            <td style="padding:2.0%;width:37%;max-width:37%;vertical-align:top;">
-              <span class="profile-wrap" aria-hidden="true">
-                <img class="profile-photo" alt="profile photo" src="images/haominqi.jpg">
-              </span>
-            </td>
-          </tr>
-
-          <tr style="padding:0px">
-            <td colspan="2" style="padding:0 2.0% 2.0% 2.0%;vertical-align:middle;">
-
-              <div class="section-block news-to-edu-gap">
-                <h2><span class="section-icon">📣</span><span>News</span></h2>
-                <ul class="news-list">
-                  <li>May 2026: I will soon start my internship at <em>MSRA</em>. Looking forward to seeing you in Shanghai!</li>
-                  <li>Feb 2026: Our papers <em>TopoEdge</em> and <em>VeriRAG</em> were accepted for <em>IEEE WCNC 2026</em> and <em>ISQED 2026</em>! </li>
-                  <li>Oct. 2025: Two papers accepted by <em>IEEE BigData 2025</em> and <em>IEEE CCNC</em>, respectively.</li>
-                  <li>Sep. 2025: Starting graduate studies @ECE UCSD Fall 25.</li>
-                </ul>
-              </div>
-
-              <div class="edu section-block">
-                <h2><span class="section-icon">🎓</span><span>Education</span></h2>
-                <table><tbody>
-                  <tr>
-                    <td class="edu-left">
-                      <div class="edu-degree">M.S. in Electrical and Computer Engineering</div>
-                      <div class="edu-school">University of California San Diego</div>
-                      <div class="edu-years">2025–Present</div>
-                    </td>
-                    <td class="edu-right">
-                      <a href="https://ece.ucsd.edu/">
-                        <img class="edu-logo ucsd" src="images/logos/ucsd.png" alt="UC San Diego">
-                      </a>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="edu-left">
-                      <div class="edu-degree">B.S. in Mathematics and Information Engineering</div>
-                      <div class="edu-school">The Chinese University of Hong Kong</div>
-                      <div class="edu-years">2021–2025</div>
-                    </td>
-                    <td class="edu-right">
-                      <a href="https://www.ie.cuhk.edu.hk/programmes/bsc-in-mieg/">
-                        <img class="edu-logo cuhk" src="images/logos/cuhk.png" alt="CUHK">
-                      </a>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="edu-left">
-                      <div class="edu-degree">Semester Exchange in Computer Science</div>
-                      <div class="edu-school">University of Leeds</div>
-                      <div class="edu-years">2023–2024</div>
-                    </td>
-                    <td class="edu-right">
-                      <a href="https://eps.leeds.ac.uk/computing">
-                        <img class="edu-logo leeds" src="images/logos/leeds.png" alt="University of Leeds">
-                      </a>
-                    </td>
-                  </tr>
-                </tbody></table>
-              </div>
-
-            </td>
-          </tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:16px 16px 8px 16px;width:100%;vertical-align:middle">
-              <h2 style="margin:0;display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--rule);">
-                <span class="section-icon">🎯</span><span>Selected Publications</span>
-              </h2>
-            </td>
-          </tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/pocgym.jpg" alt="POCGYM teaser" style="width:160px;height:120px;max-width:100%;max-height:100%;height:auto;width:auto;display:block;margin:0 auto;object-fit:contain;border-radius:10px;">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="data/poc.pdf" style="text-decoration:none;">
-                <span class="papertitle" style="font-size:16px;font-weight:700;line-height:1.25;">
-                  PoCGYM: Evaluating AI Coding Agents for PoC Generation via Verifiable Bug Injection
-                </span>
-              </a>
-              <br>
-              <span style="line-height:1.5;">
-                <strong>Haomin Qi</strong>, Xiangzhe Xu, Yiming Huang, Jingbo Shang, Chengpeng Wang
-              </span>
-              <br>
-              <span style="line-height:1.5;">
-
-Under review at Neural Information Processing Systems (NeurIPS) 2026
-
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/papers/topo.png" alt="TopoEdge teaser" style="width:160px;height:120px;max-width:100%;max-height:100%;height:auto;width:auto;display:block;margin:0 auto;object-fit:contain;border-radius:10px;">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2603.00569" style="text-decoration:none;">
-                <span class="papertitle" style="font-size:16px;font-weight:700;line-height:1.25;">
-                  TopoEdge: Topology-Grounded Agentic Framework for Edge Networking Code Generation and Repair
-                </span>
-              </a>
-              <br>
-              <span style="line-height:1.5;">
-                <strong>Haomin Qi</strong>, Bohan Liu, Zihan Dai, Yunkai Gao, Soung Chang Liew
-              </span>
-              <br>
-              <span style="line-height:1.5;">
-                <a href="https://wcnc2026.ieee-wcnc.org/"><strong><em>IEEE Wireless Communications and Networking Conference (WCNC) 2026</em></strong></a>
-              </span>
-            </td>
-          </tr>
-
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/papers/verirag.png" alt="VeriRAG teaser" style="width:160px;height:120px;max-width:100%;max-height:100%;height:auto;width:auto;display:block;margin:0 auto;object-fit:contain;border-radius:10px;">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2507.15664v2" style="text-decoration:none;">
-                <span class="papertitle" style="font-size:16px;font-weight:700;line-height:1.25;">
-                  VeriRAG: A Retrieval-Augmented Framework for Automated RTL Testability Repair
-                </span>
-              </a>
-              <br>
-              <span style="line-height:1.5;">
-                <strong>Haomin Qi*</strong>, Yuyang Du*, Lihao Zhang, Soung Chang Liew, Kexin Chen, Yining Du
-              </span>
-              <br>
-              <span style="line-height:1.5;">
-                <a href="https://www.isqed.org/"><strong><em>International Symposium on Quality Electronic Design (ISQED) 2026</em></strong></a>
-              </span>
-            </td>
-          </tr>
-
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/papers/graph.png" alt="GraphCue teaser" style="width:160px;height:120px;max-width:100%;max-height:100%;height:auto;width:auto;display:block;margin:0 auto;object-fit:contain;border-radius:10px;">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2512.17371" style="text-decoration:none;">
-                <span class="papertitle" style="font-size:16px;font-weight:700;line-height:1.25;">
-                  GraphCue for SDN Configuration Code Synthesis
-                </span>
-              </a>
-              <br>
-              <span style="line-height:1.5;">
-                <strong>Haomin Qi</strong>, Fengfei Yu, Chengbo Huang
-              </span>
-              <br>
-              <span style="line-height:1.5;">
-                <a href="https://ccnc2026.ieee-ccnc.org/"><strong><em>IEEE Consumer Communications & Networking Conference (CCNC) 2026</em></strong></a>
-              </span>
-            </td>
-          </tr>
-
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/papers/govern.png" alt="Governance-Aware teaser" style="width:160px;height:120px;max-width:100%;max-height:100%;height:auto;width:auto;display:block;margin:0 auto;object-fit:contain;border-radius:10px;">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2512.17344" style="text-decoration:none;">
-                <span class="papertitle" style="font-size:16px;font-weight:700;line-height:1.25;">
-                  Governance-Aware Hybrid Fine-Tuning for Multilingual Large Language Models
-                </span>
-              </a>
-              <br>
-              <span style="line-height:1.5;">
-                <strong>Haomin Qi</strong>, Chengbo Huang, Zihan Dai, Yunkai Gao, Min-Te Sun
-              </span>
-              <br>
-              <span style="line-height:1.5;">
-                <a href="https://vinnlp.com/llms4all"><strong><em>IEEE International Conference on Big Data Workshop @ LLMs4All 2025</em></strong></a>
-              </span>
-            </td>
-          </tr>
-
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/papers/hybrid.png" alt="Hybrid and Unitary PEFT teaser" style="width:160px;height:120px;max-width:100%;max-height:100%;height:auto;width:auto;display:block;margin:0 auto;object-fit:contain;border-radius:10px;">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2507.18076" style="text-decoration:none;">
-                <span class="papertitle" style="font-size:16px;font-weight:700;line-height:1.25;">
-                  Hybrid and Unitary PEFT for Resource-Efficient Large Language Models
-                </span>
-              </a>
-              <br>
-              <span style="line-height:1.5;">
-                <strong>Haomin Qi</strong>, Zihan Dai, Chengbo Huang
-              </span>
-              <br>
-              <span style="line-height:1.5;">
-                <a href="https://www.sciencepublishinggroup.com/journal/303/home"><strong><em>American Journal of Computer Science and Technology</em></strong></a>
-              </span>
-            </td>
-          </tr>
-
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/papers/aba.png" alt="ABA Therapy teaser" style="width:160px;height:120px;max-width:100%;max-height:100%;height:auto;width:auto;display:block;margin:0 auto;object-fit:contain;border-radius:10px;">
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://ieeexplore.ieee.org/abstract/document/11129621" style="text-decoration:none;">
-                <span class="papertitle" style="font-size:16px;font-weight:700;line-height:1.25;">
-                  Transforming ABA Therapy: An IoT-Guided, Retrieval-Augmented LLM Framework
-                </span>
-              </a>
-              <br>
-              <span style="line-height:1.5;">
-                <strong>Haomin Qi</strong>, Chung-Ho Sin, Rosanna Yuen-Yan Chan, Victor Chun-Man Wong
-              </span>
-              <br>
-              <span style="line-height:1.5;">
-                <a href="https://ieeeaccess.ieee.org/"><strong><em>IEEE Access</em></strong></a>
-              </span>
-            </td>
-          </tr>
-
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:16px 16px 8px 16px;width:100%;vertical-align:middle">
-              <h2 style="margin:0;display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--rule);">
-                <span class="section-icon">🏆</span><span>Awards &amp; Honors</span>
-              </h2>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:0 16px 16px 16px;width:100%;vertical-align:middle">
-              <ul class="news-list">
-                <li>"ArtTouch" Champion Award, CUHK Smart Campus Solutions Competition, 2024–25</li>
-                <li>CUHK MIE Outstanding Graduation Thesis Award, 2025</li>
-                <li>CUHK IE Department Academic Excellence Scholarship, 2024</li>
-                <li>HK Tech300 Entrepreneurship Award, Intell-Pro Global, 2023</li>
-                <li>University Systems of Taiwan (UST) Summer Exchange Scholarship, 2023</li>
-                <li>CUHK Shaw College General Education Scholarship, 2023</li>
-                <li>CUHK Semester Exchange Scholarship, 2023</li>
-              </ul>
-            </td>
-          </tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:16px 16px 8px 16px;width:100%;vertical-align:middle">
-              <h2 style="margin:0;display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--rule);">
-                <span class="section-icon">🌟</span><span>Misc</span>
-              </h2>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:0 16px 16px 16px;width:100%;vertical-align:middle">
-              <p class="misc-text">
-                I am passionate about fitness, skiing, and backpacking, as well as landscape photography, painting, and cooking. In my spare time, I share my life and daily moments on Instagram—feel free to follow:
-                <a class="ig-inline-link" href="https://www.instagram.com/harminchee/">instagram.com/harminchee</a>.
-              </p>
-
-              <div class="ig-grid">
-                <div class="ig-card">
-                  <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DXi_lJmm9-C/?img_index=1" data-instgrm-version="14"></blockquote>
-                </div>
-                <div class="ig-card">
-                  <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DXi93InmxZu/?img_index=1" data-instgrm-version="14"></blockquote>
-                </div>
-                <div class="ig-card">
-                  <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DS8eSbNkmrn/?img_index=1" data-instgrm-version="14"></blockquote>
-                </div>
-                <div class="ig-card">
-                  <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DHLoA_spOzS/?img_index=1" data-instgrm-version="14"></blockquote>
-                </div>
-              </div>
-              <script async src="https://www.instagram.com/embed.js"></script>
-
-            </td>
-          </tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:right;font-size:small;">
-                Template is from Jon Barron's <a href="https://jonbarron.info/">website</a>.
-              </p>
-
-              <p style="text-align:right;font-size:small;">
-                Last Updated: May 2026.
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
-
-      </td>
-    </tr>
-  </tbody></table>
-</div>
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Harmin's Homepage</title>
+
+    <meta name="author" content="Harmin Chee">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="images/1.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <style>
+      :root{
+        --icon-blue:#1a73e8;
+        --rule:#e6e6e6;
+      }
+
+      html{
+        font-size:110%;
+      }
+
+      body{
+        margin:0;
+      }
+
+      .page-wrap{
+        width:100%;
+        max-width:1040px;
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .content-pad{
+        padding:0 1.2%;
+      }
+
+      .section-block{
+        margin-top:18px;
+      }
+
+      .section-block h2{
+        margin:0 0 10px 0;
+        font-size:22px;
+        display:flex;
+        align-items:center;
+        gap:8px;
+        padding-bottom:8px;
+        border-bottom:1px solid var(--rule);
+      }
+
+      .section-icon{
+        font-size:20px;
+        line-height:1;
+      }
+
+      .news-to-edu-gap{
+        margin-bottom:34px;
+      }
+
+      .iconbar{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:7px;
+        flex-wrap:wrap;
+        margin-top:12px;
+      }
+
+      .iconbar a{
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        width:38px;
+        height:38px;
+        text-decoration:none;
+        color:var(--icon-blue);
+        line-height:1;
+      }
+
+      .iconbar a:hover{
+        opacity:0.85;
+      }
+
+      .iconbar a i,
+      .iconbar a span{
+        display:block;
+        line-height:1;
+      }
+
+      .iconbar .icon-square{
+        width:28px;
+        height:28px;
+        background:var(--icon-blue);
+        border-radius:9px;
+        color:#fff;
+      }
+
+      .iconbar .icon-circle{
+        width:32px;
+        height:32px;
+        background:var(--icon-blue);
+        border-radius:999px;
+        color:#fff;
+      }
+
+      .iconbar .fa-envelope,
+      .iconbar .fa-linkedin-in,
+      .iconbar .fa-x-twitter,
+      .iconbar .ai-google-scholar,
+      .iconbar .fa-github{
+        font-size:22px;
+      }
+
+      .iconbar .cvtext{
+        font-size:20px;
+        font-weight:800;
+        letter-spacing:-0.3px;
+      }
+
+      .iconbar .gh-mark{
+        width:20px;
+        height:20px;
+        display:block;
+      }
+
+      .iconbar .icon-square{
+        width:30px !important;
+        height:30px !important;
+        border-radius:10px !important;
+      }
+
+      .iconbar .icon-circle{
+        width:34px !important;
+        height:34px !important;
+      }
+
+      .iconbar .fa-x-twitter,
+      .iconbar .ai-google-scholar,
+      .iconbar .fa-github{
+        font-size:24px !important;
+      }
+
+      .iconbar .gh-mark{
+        width:22px !important;
+        height:22px !important;
+      }
+
+      .iconbar .cvtext{
+        font-size:21px !important;
+      }
+
+      .iconbar a.email .icon-square{
+        width:28px !important;
+        height:28px !important;
+        border-radius:9px !important;
+      }
+
+      .iconbar a.email .icon-circle{
+        width:32px !important;
+        height:32px !important;
+      }
+
+      .iconbar a.linkedin .icon-square{
+        width:28px !important;
+        height:28px !important;
+        border-radius:9px !important;
+      }
+
+      .iconbar a.linkedin .icon-circle{
+        width:32px !important;
+        height:32px !important;
+      }
+
+      .iconbar a.email .fa-envelope{
+        font-size:19px !important;
+      }
+
+      .iconbar a.linkedin .fa-linkedin-in{
+        font-size:19px !important;
+      }
+
+      .iconbar .ai-google-scholar{
+        font-size:26px !important;
+      }
+
+      .iconbar .gh-mark{
+        width:26px !important;
+        height:26px !important;
+      }
+
+      .iconbar .fa-github{
+        font-size:26px !important;
+      }
+
+      .profile-photo{
+        width:80%;
+        max-width:80%;
+        height:auto;
+        border-radius:0;
+        margin-top:38px;
+        object-fit:contain;
+        display:block;
+        pointer-events:none;
+        user-select:none;
+      }
+
+      .profile-wrap{
+        pointer-events:none;
+      }
+
+      .edu{
+        margin-top:0;
+      }
+
+      .edu table{
+        width:100%;
+        border:0;
+        border-spacing:0;
+        border-collapse:separate;
+      }
+
+      .edu td{
+        padding:10px 0;
+        vertical-align:middle;
+      }
+
+      .edu-left{
+        text-align:left;
+      }
+
+      .edu-right{
+        text-align:right;
+        width:1%;
+        white-space:nowrap;
+      }
+
+      .edu-degree{
+        font-size:16px;
+        font-weight:400;
+        margin:0;
+      }
+
+      .edu-school{
+        font-size:16px;
+        font-weight:400;
+        margin:2px 0 0 0;
+      }
+
+      .edu-years{
+        font-size:14px;
+        color:#666;
+        margin:2px 0 0 0;
+      }
+
+      .edu-logo{
+        width:auto;
+        display:inline-block;
+        vertical-align:middle;
+      }
+
+      .edu-logo.ucsd{
+        height:95px;
+        margin-right:6px;
+      }
+
+      .edu-logo.cuhk{
+        transform:translateX(4px);
+        height:88px;
+      }
+
+      .edu-logo.leeds{
+        height:98px;
+        transform:translateX(-14px);
+      }
+
+      .iconbar .gh-mark path{
+        fill:#ffffff;
+      }
+
+      .iconbar{
+        --box:35px;
+        --ink:24px;
+      }
+
+      .iconbar a{
+        width:var(--box);
+        height:var(--box);
+      }
+
+      .iconbar .icon-square,
+      .iconbar .icon-circle{
+        width:var(--box);
+        height:var(--box);
+      }
+
+      .iconbar i{
+        font-size:var(--ink);
+      }
+
+      .iconbar .fa-x-twitter{
+        font-size:var(--ink);
+      }
+
+      .iconbar .ai-google-scholar{
+        font-size:var(--ink);
+      }
+
+      .iconbar .fa-github{
+        font-size:var(--ink);
+      }
+
+      .iconbar .cvtext{
+        font-size:var(--ink);
+        font-weight:800;
+        letter-spacing:-0.3px;
+      }
+
+      .news-list{
+        margin:0;
+        padding-left:18px;
+      }
+
+      .news-list li{
+        margin:6px 0;
+      }
+
+      .misc-text{
+        margin:0;
+        line-height:1.6;
+      }
+
+      .ig-inline-link{
+        word-break:break-word;
+      }
+
+      .ig-grid{
+        margin-top:12px;
+        display:grid;
+        grid-template-columns:repeat(4, 1fr);
+        gap:10px;
+        width:100%;
+        align-items:start;
+      }
+
+      .ig-card{
+        width:100%;
+        max-width:100%;
+      }
+
+      .ig-card .instagram-media{
+        margin:0 !important;
+        width:100% !important;
+        min-width:0 !important;
+        max-width:100% !important;
+        border-radius:10px !important;
+        box-shadow:0 1px 4px rgba(0,0,0,0.08) !important;
+      }
+
+      @media (max-width: 920px){
+        .ig-grid{
+          grid-template-columns:repeat(2, 1fr);
+          gap:10px;
+        }
+      }
+
+      @media (max-width: 520px){
+        .ig-grid{
+          grid-template-columns:1fr;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce){
+        *{
+          scroll-behavior:auto !important;
+        }
+      }
+
+      .notranslate{
+        -webkit-transform:translateZ(0);
+        transform:translateZ(0);
+      }
+
+      .notranslate,
+      .notranslate *{
+        font-variant-ligatures:none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page-wrap">
+      <table class="content-pad" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr style="padding:0px">
+          <td style="padding:0px">
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr style="padding:0px">
+                <td style="padding:2.0%;width:63%;vertical-align:middle">
+                  <p class="name" style="text-align:center;">
+                    Haomin (Harmin) Qi (Chee)
+                  </p>
+
+                  <p>
+                    I am a master student at <a href="https://ucsd.edu/">UC San Diego</a>, advised by <a href="https://shangjingbo1226.github.io/">Prof. Jingbo Shang</a>. I am now also working with <a href="https://chengpeng-wang.github.io/">Chengpeng Wang</a>. Previously, I received my Bachelor's degree from <a href="https://www.cuhk.edu.hk/chinese/index.html#">The Chinese University of Hong Kong</a>, where I was advised by <a href="https://www.ie.cuhk.edu.hk/faculty/liew-soung-chang/">Prof. Soung Chang Liew</a> and <a href="https://www.ie.cuhk.edu.hk/faculty/chan-yuen-yan-rosanna/">Prof. Rosanna Yuen-Yan Chan</a>. Prior to that, I worked with <a href="https://wasn.csie.ncu.edu.tw/advisor">Prof. Min-Te (Peter) Sun</a> at National Central University and <a href="https://aicvlab2019.wordpress.com/">Prof. Jun Wei Hsieh</a> at National Yang Ming Chiao Tung University, Taiwan.
+                  </p>
+
+                  <p>
+                    My research interests lie at the intersection of Machine Learning and Software Engineering. I focus on improving the code generation capabilities of large language models (LLMs) and agentic AI; applying LLMs for program verification, repair, and quality evaluation; LLMs security and auditable code intelligent agents; and efficient reasoning and training for LLMs. My goal is to develop intelligent code systems to handle complex and real-world problems.
+                  </p>
+
+                  <p>
+                    I will be joining Microsoft this summer as a research intern, where I will work on coding agents and benchmarking evaluation.
+                  </p>
+
+                  <div class="iconbar notranslate" translate="no">
+                    <a class="icon-square email" href="mailto:h5qi@ucsd.edu" aria-label="Email" title="Email">
+                      <i class="fa-solid fa-envelope"></i>
+                    </a>
+
+                    <a href="data/CV.pdf" aria-label="CV" title="CV">
+                      <span class="cvtext">CV</span>
+                    </a>
+
+                    <a href="https://scholar.google.com/citations?user=GgVymP0AAAAJ&hl=en" aria-label="Google Scholar" title="Google Scholar">
+                      <i class="ai ai-google-scholar"></i>
+                    </a>
+
+                    <a class="icon-square linkedin" href="https://www.linkedin.com/in/harminchee/" aria-label="LinkedIn" title="LinkedIn">
+                      <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="https://x.com/HarminChee789" aria-label="X" title="X">
+                      <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                    <a href="https://github.com/HarminChee" aria-label="GitHub" title="GitHub">
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                  </div>
+                </td>
+
+                <td style="padding:2.0%;width:37%;max-width:37%;vertical-align:top;">
+                  <span class="profile-wrap" aria-hidden="true">
+                    <img class="profile-photo" alt="profile photo" src="images/haominqi.jpg">
+                  </span>
+                </td>
+              </tr>
+
+              <tr style="padding:0px">
+                <td colspan="2" style="padding:0 2.0% 2.0% 2.0%;vertical-align:middle;">
+
+                  <div class="section-block news-to-edu-gap">
+                    <h2><span class="section-icon">📣</span><span>News</span></h2>
+                    <ul class="news-list">
+                      <li>May 2026: I will soon start my internship at <em>MSRA</em>. Looking forward to seeing you in Shanghai!</li>
+                      <li>Feb 2026: Our papers <em>TopoEdge</em> and <em>VeriRAG</em> were accepted for <em>IEEE WCNC 2026</em> and <em>ISQED 2026</em>! </li>
+                      <li>Oct. 2025: Two papers accepted by <em>IEEE BigData 2025</em> and <em>IEEE CCNC</em>, respectively.</li>
+                      <li>Sep. 2025: Starting graduate studies @ECE UCSD Fall 25.</li>
+                    </ul>
+                  </div>
+
+                  <div class="edu section-block">
+                    <h2><span class="section-icon">🎓</span><span>Education</span></h2>
+                    <table><tbody>
+                      <tr>
+                        <td class="edu-left">
+                          <div class="edu-degree">M.S. in Electrical and Computer Engineering</div>
+                          <div class="edu-school">University of California San Diego</div>
+                          <div class="edu-years">2025–Present</div>
+                        </td>
+                        <td class="edu-right">
+                          <a href="https://ece.ucsd.edu/">
+                            <img class="edu-logo ucsd" src="images/logos/ucsd.png" alt="UC San Diego">
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="edu-left">
+                          <div class="edu-degree">B.S. in Mathematics and Information Engineering</div>
+                          <div class="edu-school">The Chinese University of Hong Kong</div>
+                          <div class="edu-years">2021–2025</div>
+                        </td>
+                        <td class="edu-right">
+                          <a href="https://www.ie.cuhk.edu.hk/programmes/bsc-in-mieg/">
+                            <img class="edu-logo cuhk" src="images/logos/cuhk.png" alt="CUHK">
+                          </a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td class="edu-left">
+                          <div class="edu-degree">Semester Exchange in Computer Science</div>
+                          <div class="edu-school">University of Leeds</div>
+                          <div class="edu-years">2023–2024</div>
+                        </td>
+                        <td class="edu-right">
+                          <a href="https://eps.leeds.ac.uk/computing">
+                            <img class="edu-logo leeds" src="images/logos/leeds.png" alt="University of Leeds">
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody></table>
+                  </div>
+
+                </td>
+              </tr>
+            </tbody></table>
+
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+                <td style="padding:16px 16px 8px 16px;width:100%;vertical-align:middle">
+                  <h2 style="margin:0;display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--rule);">
+                    <span class="section-icon">🎯</span><span>Selected Publications</span>
+                  </h2>
+                </td>
+              </tr>
+            </tbody></table>
+
+            <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+              <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <img src="images/pocgym.jpg" alt="POCGYM teaser" style="width:160px;height:120px;max-width:100%;max-height:100%;height:auto;width:auto;display:block;margin:0 auto;object-fit:contain;border-radius:10px;">
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="data/poc.pdf" style="text-decoration:none;">
+                    <span class="papertitle" style="font-size:16px;font-weight:700;line-height:1.25;">
+                      PoCGYM: Evaluating AI Coding Agents for PoC Generation via Verifiable Bug Injection
+                    </span>
+                  </a>
+                  <br>
+                  <span style="line-height:1.5;">
+                    <strong>Haomin Qi</strong>, Xiangzhe Xu, Yiming Huang, Jingbo Shang, Chengpeng Wang
+                  </span>
+                  <br>
+                  <span style="line-height:1.5;">
+  Under review at <a href="https://neurips.cc/Conferences/2026" style="text-decoration:none;"><strong><em>Neural Information Processing Systems (NeurIPS) 2026</em></strong></a>
+</span>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <img src="images/papers/topo.png" alt="TopoEdge teaser" style="width:160px;height:120px;max-width:100%;max-height:100%;height:auto;width:auto;display:block;margin:0 auto;object-fit:contain;border-radius:10px;">
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="https://arxiv.org/abs/2603.00569" style="text-decoration:none;">
+                    <span class="papertitle" style="font-size:16px;font-weight:700;line-height:1.25;">
+                      TopoEdge: Topology-Grounded Agentic Framework for Edge Networking Code Generation and Repair
+                    </span>
+                  </a>
+                  <br>
+                  <span style="line-height:1.5;">
+                    <strong>Haomin Qi</strong>, Bohan Liu, Zihan Dai, Yunkai Gao, Soung Chang Liew
+                  </span>
+                  <br>
+                  <span style="line-height:1.5;">
+                    <a href="https://wcnc2026.ieee-wcnc.org/"><strong><em>IEEE Wireless Communications and Networking Conference (WCNC) 2026</em></strong></a>
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <img src="images/papers/verirag.png" alt="VeriRAG teaser" style="width:160px;height:120px;max-width:100%;max-height:100%;height:auto;width:auto;display:block;margin:0 auto;object-fit:contain;border-radius:10px;">
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="https://arxiv.org/abs/2507.15664v2" style="text-decoration:none;">
+                    <span class="papertitle" style="font-size:16px;font-weight:700;line-height:1.25;">
+                      VeriRAG: A Retrieval-Augmented Framework for Automated RTL Testability Repair
+                    </span>
+                  </a>
+                  <br>
+                  <span style="line-height:1.5;">
+                    <strong>Haomin Qi*</strong>, Yuyang Du*, Lihao Zhang, Soung Chang Liew, Kexin Chen, Yining Du
+                  </span>
+                  <br>
+                  <span style="line-height:1.5;">
+                    <a href="https://www.isqed.org/"><strong><em>International Symposium on Quality Electronic Design (ISQED) 2026</em></strong></a>
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <img src="images/papers/graph.png" alt="GraphCue teaser" style="width:160px;height:120px;max-width:100%;max-height:100%;height:auto;width:auto;display:block;margin:0 auto;object-fit:contain;border-radius:10px;">
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="https://arxiv.org/abs/2512.17371" style="text-decoration:none;">
+                    <span class="papertitle" style="font-size:16px;font-weight:700;line-height:1.25;">
+                      GraphCue for SDN Configuration Code Synthesis
+                    </span>
+                  </a>
+                  <br>
+                  <span style="line-height:1.5;">
+                    <strong>Haomin Qi</strong>, Fengfei Yu, Chengbo Huang
+                  </span>
+                  <br>
+                  <span style="line-height:1.5;">
+                    <a href="https://ccnc2026.ieee-ccnc.org/"><strong><em>IEEE Consumer Communications & Networking Conference (CCNC) 2026</em></strong></a>
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <img src="images/papers/govern.png" alt="Governance-Aware teaser" style="width:160px;height:120px;max-width:100%;max-height:100%;height:auto;width:auto;display:block;margin:0 auto;object-fit:contain;border-radius:10px;">
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="https://arxiv.org/abs/2512.17344" style="text-decoration:none;">
+                    <span class="papertitle" style="font-size:16px;font-weight:700;line-height:1.25;">
+                      Governance-Aware Hybrid Fine-Tuning for Multilingual Large Language Models
+                    </span>
+                  </a>
+                  <br>
+                  <span style="line-height:1.5;">
+                    <strong>Haomin Qi</strong>, Chengbo Huang, Zihan Dai, Yunkai Gao, Min-Te Sun
+                  </span>
+                  <br>
+                  <span style="line-height:1.5;">
+                    <a href="https://vinnlp.com/llms4all"><strong><em>IEEE International Conference on Big Data Workshop @ LLMs4All 2025</em></strong></a>
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <img src="images/papers/hybrid.png" alt="Hybrid and Unitary PEFT teaser" style="width:160px;height:120px;max-width:100%;max-height:100%;height:auto;width:auto;display:block;margin:0 auto;object-fit:contain;border-radius:10px;">
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="https://arxiv.org/abs/2507.18076" style="text-decoration:none;">
+                    <span class="papertitle" style="font-size:16px;font-weight:700;line-height:1.25;">
+                      Hybrid and Unitary PEFT for Resource-Efficient Large Language Models
+                    </span>
+                  </a>
+                  <br>
+                  <span style="line-height:1.5;">
+                    <strong>Haomin Qi</strong>, Zihan Dai, Chengbo Huang
+                  </span>
+                  <br>
+                  <span style="line-height:1.5;">
+                    <a href="https://www.sciencepublishinggroup.com/journal/303/home"><strong><em>American Journal of Computer Science and Technology</em></strong></a>
+                  </span>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <img src="images/papers/aba.png" alt="ABA Therapy teaser" style="width:160px;height:120px;max-width:100%;max-height:100%;height:auto;width:auto;display:block;margin:0 auto;object-fit:contain;border-radius:10px;">
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="https://ieeexplore.ieee.org/abstract/document/11129621" style="text-decoration:none;">
+                    <span class="papertitle" style="font-size:16px;font-weight:700;line-height:1.25;">
+                      Transforming ABA Therapy: An IoT-Guided, Retrieval-Augmented LLM Framework
+                    </span>
+                  </a>
+                  <br>
+                  <span style="line-height:1.5;">
+                    <strong>Haomin Qi</strong>, Chung-Ho Sin, Rosanna Yuen-Yan Chan, Victor Chun-Man Wong
+                  </span>
+                  <br>
+                  <span style="line-height:1.5;">
+                    <a href="https://ieeeaccess.ieee.org/"><strong><em>IEEE Access</em></strong></a>
+                  </span>
+                </td>
+              </tr>
+
+            </tbody></table>
+
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+                <td style="padding:16px 16px 8px 16px;width:100%;vertical-align:middle">
+                  <h2 style="margin:0;display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--rule);">
+                    <span class="section-icon">🏆</span><span>Awards &amp; Honors</span>
+                  </h2>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:0 16px 16px 16px;width:100%;vertical-align:middle">
+                  <ul class="news-list">
+                    <li>"ArtTouch" Champion Award, CUHK Smart Campus Solutions Competition, 2024–25</li>
+                    <li>CUHK MIE Outstanding Graduation Thesis Award, 2025</li>
+                    <li>CUHK IE Department Academic Excellence Scholarship, 2024</li>
+                    <li>HK Tech300 Entrepreneurship Award, Intell-Pro Global, 2023</li>
+                    <li>University Systems of Taiwan (UST) Summer Exchange Scholarship, 2023</li>
+                    <li>CUHK Shaw College General Education Scholarship, 2023</li>
+                    <li>CUHK Semester Exchange Scholarship, 2023</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody></table>
+
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+                <td style="padding:16px 16px 8px 16px;width:100%;vertical-align:middle">
+                  <h2 style="margin:0;display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--rule);">
+                    <span class="section-icon">🌟</span><span>Misc</span>
+                  </h2>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:0 16px 16px 16px;width:100%;vertical-align:middle">
+                  <p class="misc-text">
+                    I am passionate about fitness, skiing, and backpacking, as well as landscape photography, painting, and cooking. In my spare time, I share my life and daily moments on Instagram—feel free to follow:
+                    <a class="ig-inline-link" href="https://www.instagram.com/harminchee/">instagram.com/harminchee</a>.
+                  </p>
+
+                  <div class="ig-grid">
+                    <div class="ig-card">
+                      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DXi_lJmm9-C/?img_index=1" data-instgrm-version="14"></blockquote>
+                    </div>
+                    <div class="ig-card">
+                      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DXi93InmxZu/?img_index=1" data-instgrm-version="14"></blockquote>
+                    </div>
+                    <div class="ig-card">
+                      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DS8eSbNkmrn/?img_index=1" data-instgrm-version="14"></blockquote>
+                    </div>
+                    <div class="ig-card">
+                      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DHLoA_spOzS/?img_index=1" data-instgrm-version="14"></blockquote>
+                    </div>
+                  </div>
+                  <script async src="https://www.instagram.com/embed.js"></script>
+
+                </td>
+              </tr>
+            </tbody></table>
+
+            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+                <td style="padding:0px">
+                  <br>
+                  <p style="text-align:right;font-size:small;">
+                    Template is from Jon Barron's <a href="https://jonbarron.info/">website</a>.
+                  </p>
+
+                  <p style="text-align:right;font-size:small;">
+                    Last Updated: May 2026.
+                  </p>
+                </td>
+              </tr>
+            </tbody></table>
+
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+  </body>
+</html>
