@@ -106,6 +106,7 @@
       :root{
         --icon-blue:#1a73e8;
         --rule:#e6e6e6;
+        --content-width:1080px;
       }
 
       html{
@@ -134,7 +135,7 @@
 
       .page-wrap{
         width:100%;
-        max-width:1180px;
+        max-width:var(--content-width);
         margin-left:auto;
         margin-right:auto;
       }
@@ -151,7 +152,7 @@
 
       .top-nav-shell{
         width:100%;
-        max-width:1180px;
+        max-width:var(--content-width);
         margin:0 auto;
         padding:0 1.2%;
         box-sizing:border-box;
@@ -162,7 +163,7 @@
         display:flex;
         align-items:center;
         justify-content:flex-start;
-        gap:30px;
+        gap:28px;
         padding:0 2%;
         overflow-x:auto;
         scrollbar-width:none;
@@ -179,8 +180,8 @@
         padding:16px 0 13px;
         border-bottom:3px solid transparent;
         color:#182B49;
-        font-size:19px;
-        font-weight:700;
+        font-size:18px;
+        font-weight:600;
         line-height:1.2;
         text-decoration:none;
         white-space:nowrap;
@@ -236,7 +237,7 @@
 
       .section-block h2{
         margin:0 0 10px 0;
-        font-size:24px;
+        font-size:22px;
         display:flex;
         align-items:center;
         gap:8px;
@@ -245,7 +246,7 @@
       }
 
       .section-icon{
-        font-size:22px;
+        font-size:18px;
         line-height:1;
       }
 
@@ -395,8 +396,8 @@
       }
 
       .profile-photo{
-        width:75%;
-        max-width:290px;
+        width:88%;
+        max-width:320px;
         height:auto;
         border-radius:14px;
         margin-top:75.5px;
@@ -424,8 +425,12 @@
       }
 
       .edu td{
-        padding:10px 0;
+        padding:9px 0;
         vertical-align:middle;
+      }
+
+      .edu tr:not(:last-child) td{
+        border-bottom:1px solid #f0f2f4;
       }
 
       .edu-left{
@@ -433,9 +438,9 @@
       }
 
       .edu-right{
-        text-align:right;
-        width:1%;
-        white-space:nowrap;
+        text-align:center;
+        width:64px;
+        padding-right:14px !important;
       }
 
       .edu-degree{
@@ -479,8 +484,8 @@
 
       .edu-logo.institution-logo,
       .experience-logo.institution-logo{
-        width:78px;
-        height:78px;
+        width:46px;
+        height:46px;
         max-width:none;
         max-height:none;
         margin-left:auto;
@@ -491,8 +496,8 @@
 
       .edu-logo.institution-logo.logo-large,
       .experience-logo.institution-logo.logo-large{
-        width:88px;
-        height:88px;
+        width:50px;
+        height:50px;
       }
 
       .experience{
@@ -507,18 +512,23 @@
       }
 
       .experience td{
-        padding:12px 0;
+        padding:9px 0;
         vertical-align:middle;
+      }
+
+      .experience tr:not(:last-child) td{
+        border-bottom:1px solid #f0f2f4;
       }
 
       .exp-left{
         text-align:left;
-        padding-right:24px !important;
+        padding-right:0 !important;
       }
 
       .exp-right{
-        width:190px;
+        width:64px;
         text-align:center;
+        padding-right:14px !important;
       }
 
       .exp-org{
@@ -542,8 +552,8 @@
       .experience-logo{
         display:block;
         width:auto;
-        max-width:165px;
-        max-height:62px;
+        max-width:60px;
+        max-height:40px;
         margin:0 auto;
         object-fit:contain;
       }
@@ -553,8 +563,8 @@
       }
 
       .experience-logo.deloitte-small{
-        max-width:140px;
-        max-height:52px;
+        max-width:58px;
+        max-height:30px;
       }
 
       .pub-adoption{
@@ -788,12 +798,13 @@
         }
 
         .exp-right{
-          width:125px;
+          width:52px;
+          padding-right:10px !important;
         }
 
         .experience-logo{
-          max-width:112px;
-          max-height:50px;
+          max-width:48px;
+          max-height:34px;
         }
 
         .experience-logo.ncu{
@@ -801,20 +812,20 @@
         }
 
         .experience-logo.deloitte-small{
-          max-width:102px;
-          max-height:42px;
+          max-width:46px;
+          max-height:26px;
         }
 
         .edu-logo.institution-logo,
         .experience-logo.institution-logo{
-          width:62px;
-          height:62px;
+          width:40px;
+          height:40px;
         }
 
         .edu-logo.institution-logo.logo-large,
         .experience-logo.institution-logo.logo-large{
-          width:70px;
-          height:70px;
+          width:44px;
+          height:44px;
         }
 
         .publications-table > tbody > tr > td:first-child{
@@ -890,7 +901,7 @@
                   </p>
 
                   <p class="intro-text">
-                    Beyond these directions, I also explore requirement evolution for long-horizon tasks, session management for super agents, and reverse engineering for cybersecurity.
+                    Beyond these directions, I also explore <strong>LLM router for long-horizon tasks</strong>, <strong>session management for super agents</strong>, and <strong>agent RSI self-evolution</strong>.
                   </p>
 
                   <p class="intro-text">
@@ -952,28 +963,28 @@
                     <h2><span class="section-icon">🎓</span><span>Education</span></h2>
                     <table><tbody>
                       <tr>
-                        <td class="edu-left">
-                          <div class="edu-school">University of California San Diego</div>
-                          <div class="edu-degree">M.S. in Electrical and Computer Engineering</div>
-                          <div class="edu-years">2025–Present</div>
-                        </td>
                         <td class="edu-right">
                           <a href="https://ece.ucsd.edu/">
                             <img class="edu-logo ucsd institution-logo logo-large" src="images/logos/ucsd.png" alt="UC San Diego">
                           </a>
                         </td>
+                        <td class="edu-left">
+                          <div class="edu-school">University of California San Diego</div>
+                          <div class="edu-degree">M.S. in Electrical and Computer Engineering</div>
+                          <div class="edu-years">2025–Present</div>
+                        </td>
                       </tr>
 
                       <tr>
-                        <td class="edu-left">
-                          <div class="edu-school">The Chinese University of Hong Kong</div>
-                          <div class="edu-degree">B.S. in Mathematics and Information Engineering</div>
-                          <div class="edu-years">2021–2025</div>
-                        </td>
                         <td class="edu-right">
                           <a href="https://www.ie.cuhk.edu.hk/programmes/bsc-in-mieg/">
                             <img class="edu-logo cuhk institution-logo logo-large" src="images/logos/cuhk.png" alt="CUHK">
                           </a>
+                        </td>
+                        <td class="edu-left">
+                          <div class="edu-school">The Chinese University of Hong Kong</div>
+                          <div class="edu-degree">B.S. in Mathematics and Information Engineering</div>
+                          <div class="edu-years">2021–2025</div>
                         </td>
                       </tr>
 
@@ -1197,41 +1208,41 @@
                     <h2><span class="section-icon">💼</span><span>Experience</span></h2>
                     <table><tbody>
                       <tr>
-                        <td class="exp-left">
-                          <div class="exp-org">University of California Los Angeles</div>
-                          <div class="exp-role">Code Intelligence Lab Research Member</div>
-                          <div class="exp-years">Jul. 2026–Present</div>
-                        </td>
                         <td class="exp-right">
                           <a href="https://yrbding.github.io/">
                             <img class="experience-logo institution-logo logo-large" src="images/logos/ucla-seal.svg" alt="UCLA seal">
                           </a>
                         </td>
+                        <td class="exp-left">
+                          <div class="exp-org">University of California Los Angeles</div>
+                          <div class="exp-role">Code Intelligence Lab Research Member</div>
+                          <div class="exp-years">Jul. 2026–Present</div>
+                        </td>
                       </tr>
 
                       <tr>
-                        <td class="exp-left">
-                          <div class="exp-org">Microsoft Research</div>
-                          <div class="exp-role">Research Intern</div>
-                          <div class="exp-years">May 2026–Nov. 2026</div>
-                        </td>
                         <td class="exp-right">
                           <a href="https://www.microsoft.com/en-us/research/">
                             <img class="experience-logo institution-logo" src="images/logos/microsoft-mark.svg" alt="Microsoft logo">
                           </a>
                         </td>
+                        <td class="exp-left">
+                          <div class="exp-org">Microsoft Research</div>
+                          <div class="exp-role">Research Intern</div>
+                          <div class="exp-years">May 2026–Nov. 2026</div>
+                        </td>
                       </tr>
 
                       <tr>
-                        <td class="exp-left">
-                          <div class="exp-org">Deloitte</div>
-                          <div class="exp-role">Machine Learning Engineer Intern</div>
-                          <div class="exp-years">Sep. 2024–Dec. 2024</div>
-                        </td>
                         <td class="exp-right">
                           <a href="https://www.deloitte.com/">
                             <img class="experience-logo deloitte-small" src="images/logos/deloitte.svg" alt="Deloitte">
                           </a>
+                        </td>
+                        <td class="exp-left">
+                          <div class="exp-org">Deloitte</div>
+                          <div class="exp-role">Machine Learning Engineer Intern</div>
+                          <div class="exp-years">Sep. 2024–Dec. 2024</div>
                         </td>
                       </tr>
                     </tbody></table>
