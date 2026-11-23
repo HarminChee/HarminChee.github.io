@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Haomin Qi | Coding Agents and Software Engineering</title>
+    <title>Haomin Qi's Personal Website</title>
 
     <meta name="author" content="Haomin Qi">
     <meta name="description" content="Haomin Qi is a researcher in coding agents, software engineering, program synthesis, code repair, and cybersecurity.">
@@ -14,7 +14,7 @@
 
     <meta property="og:type" content="profile">
     <meta property="og:site_name" content="Haomin Qi">
-    <meta property="og:title" content="Haomin Qi | Coding Agents and Software Engineering">
+    <meta property="og:title" content="Haomin Qi's Personal Website">
     <meta property="og:description" content="Research on coding agents, software engineering, program synthesis, code repair, and cybersecurity.">
     <meta property="og:url" content="https://harminchee.github.io/">
     <meta property="og:image" content="https://harminchee.github.io/images/haominqi-web.jpg">
@@ -24,10 +24,24 @@
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@HaominQ37321">
-    <meta name="twitter:title" content="Haomin Qi | Coding Agents and Software Engineering">
+    <meta name="twitter:title" content="Haomin Qi's Personal Website">
     <meta name="twitter:description" content="Research on coding agents, software engineering, program synthesis, code repair, and cybersecurity.">
     <meta name="twitter:image" content="https://harminchee.github.io/images/haominqi-web.jpg">
     <meta name="twitter:image:alt" content="Portrait of Haomin Qi">
+
+    <script>
+      (function () {
+        try {
+          var savedTheme = localStorage.getItem('haomin-theme');
+          var preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          document.documentElement.dataset.theme = savedTheme === 'dark' || savedTheme === 'light'
+            ? savedTheme
+            : preferredTheme;
+        } catch (error) {
+          document.documentElement.dataset.theme = 'light';
+        }
+      }());
+    </script>
 
     <script type="application/ld+json">
       {
@@ -37,7 +51,7 @@
             "@type": "WebSite",
             "@id": "https://harminchee.github.io/#website",
             "url": "https://harminchee.github.io/",
-            "name": "Haomin Qi",
+            "name": "Haomin Qi's Personal Website",
             "alternateName": ["Harmin Chee", "Haomin (Harmin) Qi"],
             "inLanguage": "en"
           },
@@ -45,7 +59,7 @@
             "@type": "ProfilePage",
             "@id": "https://harminchee.github.io/#profile",
             "url": "https://harminchee.github.io/",
-            "name": "Haomin Qi | Coding Agents and Software Engineering",
+            "name": "Haomin Qi's Personal Website",
             "isPartOf": { "@id": "https://harminchee.github.io/#website" },
             "mainEntity": { "@id": "https://harminchee.github.io/#person" },
             "dateModified": "2026-11-09"
@@ -104,9 +118,60 @@
 
     <style>
       :root{
-        --icon-blue:#1a73e8;
+        --icon-blue:#315f73;
         --rule:#e6e6e6;
+        --soft-rule:#f0f2f4;
+        --pub-rule:#dfe6ee;
         --content-width:1080px;
+        --page-bg:#ffffff;
+        --surface-bg:#ffffff;
+        --text:#17191d;
+        --muted:#666666;
+        --link:#315f73;
+        --link-hover:#0b7891;
+        --link-underline:rgba(49, 95, 115, 0.28);
+        --title-link:#193f5d;
+        --title-link-hover:#00629b;
+        --venue-link:#735b3e;
+        --venue-link-hover:#9a5d24;
+        --nav-bg:rgba(255, 255, 255, 0.88);
+        --nav-text:#182B49;
+        --nav-hover:#00629B;
+        --nav-border:#dfe6ee;
+        --nav-shadow:0 1px 5px rgba(38, 67, 92, 0.08);
+        --toggle-bg:linear-gradient(135deg, #dcecff, #eff6ff);
+        --toggle-border:rgba(24, 43, 73, 0.14);
+        --toggle-thumb:#ffffff;
+        --toggle-shadow:0 5px 15px rgba(30, 83, 140, 0.22);
+        color-scheme:light;
+      }
+
+      html[data-theme="dark"]{
+        --icon-blue:#91b9c8;
+        --rule:#29384a;
+        --soft-rule:#202d3d;
+        --pub-rule:#2b3a4d;
+        --page-bg:#090d13;
+        --surface-bg:#0e141d;
+        --text:#e8edf5;
+        --muted:#a6b1c0;
+        --link:#98bfca;
+        --link-hover:#d3edf2;
+        --link-underline:rgba(152, 191, 202, 0.38);
+        --title-link:#d7e7f3;
+        --title-link-hover:#8fd7ed;
+        --venue-link:#d1b98c;
+        --venue-link-hover:#f1d7a6;
+        --nav-bg:rgba(9, 13, 19, 0.88);
+        --nav-text:#d9e8ff;
+        --nav-hover:#75c4ff;
+        --nav-border:#243246;
+        --nav-shadow:0 1px 8px rgba(0, 0, 0, 0.34);
+        --toggle-bg:linear-gradient(135deg, #172235, #263750);
+        --toggle-border:rgba(140, 187, 255, 0.22);
+        --toggle-thumb:#dcecff;
+        --toggle-shadow:0 6px 18px rgba(0, 0, 0, 0.46);
+        color-scheme:dark;
       }
 
       html{
@@ -118,6 +183,57 @@
       body{
         margin:0;
         zoom:0.92;
+        background:var(--page-bg);
+        color:var(--text);
+        transition:background-color .28s ease, color .28s ease;
+      }
+
+      body,
+      td,
+      th,
+      tr,
+      p,
+      h1,
+      h2,
+      h3,
+      strong{
+        color:var(--text);
+      }
+
+      a{
+        color:var(--link);
+        transition:color .18s ease, text-decoration-color .18s ease;
+      }
+
+      a strong,
+      a em{
+        color:inherit;
+      }
+
+      a:hover,
+      a:focus{
+        color:var(--link-hover);
+      }
+
+      .intro-text a,
+      .news-list a,
+      .service-list a,
+      .misc-text a{
+        text-decoration-line:underline;
+        text-decoration-thickness:1px;
+        text-decoration-color:var(--link-underline);
+        text-underline-offset:3px;
+      }
+
+      .intro-text a:hover,
+      .intro-text a:focus,
+      .news-list a:hover,
+      .news-list a:focus,
+      .service-list a:hover,
+      .service-list a:focus,
+      .misc-text a:hover,
+      .misc-text a:focus{
+        text-decoration-color:currentColor;
       }
 
       @supports not (zoom: 1){
@@ -144,10 +260,12 @@
         position:sticky;
         top:0;
         z-index:1000;
-        background:rgba(255, 255, 255, 0.97);
-        border-bottom:1px solid #dfe6ee;
-        box-shadow:0 1px 5px rgba(38, 67, 92, 0.08);
-        backdrop-filter:blur(8px);
+        background:var(--nav-bg);
+        border-bottom:1px solid var(--nav-border);
+        box-shadow:var(--nav-shadow);
+        backdrop-filter:blur(14px) saturate(145%);
+        -webkit-backdrop-filter:blur(14px) saturate(145%);
+        transition:background-color .28s ease, border-color .28s ease, box-shadow .28s ease;
       }
 
       .top-nav-shell{
@@ -156,10 +274,14 @@
         margin:0 auto;
         padding:0 1.2%;
         box-sizing:border-box;
+        display:flex;
+        align-items:center;
+        gap:14px;
       }
 
       .top-nav-inner{
-        width:80%;
+        width:auto;
+        flex:1 1 auto;
         display:flex;
         align-items:center;
         justify-content:flex-start;
@@ -179,7 +301,7 @@
         flex:0 0 auto;
         padding:16px 0 13px;
         border-bottom:3px solid transparent;
-        color:#182B49;
+        color:var(--nav-text);
         font-size:18px;
         font-weight:600;
         line-height:1.2;
@@ -189,8 +311,97 @@
 
       .top-nav a:hover,
       .top-nav a:focus-visible{
-        color:#00629B;
-        border-bottom-color:#00629B;
+        color:var(--nav-hover);
+        border-bottom-color:var(--nav-hover);
+      }
+
+      .theme-toggle{
+        flex:0 0 auto;
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        width:58px;
+        height:34px;
+        padding:0;
+        border:1px solid var(--toggle-border);
+        border-radius:999px;
+        background:var(--toggle-bg);
+        box-shadow:var(--toggle-shadow);
+        cursor:pointer;
+        position:relative;
+        isolation:isolate;
+        transition:transform .18s ease, border-color .28s ease, box-shadow .28s ease, background .28s ease;
+      }
+
+      .theme-toggle:hover{
+        transform:translateY(-1px);
+      }
+
+      .theme-toggle:active{
+        transform:translateY(0) scale(.97);
+      }
+
+      .theme-toggle:focus-visible{
+        outline:3px solid color-mix(in srgb, var(--nav-hover) 45%, transparent);
+        outline-offset:3px;
+      }
+
+      .theme-toggle-thumb{
+        position:absolute;
+        z-index:-1;
+        top:3px;
+        left:3px;
+        width:26px;
+        height:26px;
+        border-radius:50%;
+        background:var(--toggle-thumb);
+        box-shadow:0 2px 8px rgba(0, 0, 0, .22);
+        transition:transform .28s cubic-bezier(.22, .8, .3, 1), background-color .28s ease;
+      }
+
+      html[data-theme="dark"] .theme-toggle-thumb{
+        transform:translateX(24px);
+      }
+
+      .theme-toggle-icon{
+        position:absolute;
+        top:50%;
+        transform:translateY(-50%);
+        font-size:14px;
+        line-height:1;
+        transition:opacity .22s ease, transform .28s ease, color .28s ease;
+      }
+
+      .theme-toggle-sun{
+        left:9px;
+        color:#d98900;
+        opacity:1;
+      }
+
+      .theme-toggle-moon{
+        right:9px;
+        color:#b9d6ff;
+        opacity:.62;
+      }
+
+      html[data-theme="dark"] .theme-toggle-sun{
+        opacity:.56;
+      }
+
+      html[data-theme="dark"] .theme-toggle-moon{
+        opacity:1;
+      }
+
+      .sr-only{
+        position:absolute;
+        width:1px;
+        height:1px;
+        padding:0;
+        margin:-1px;
+        overflow:hidden;
+        clip:rect(0, 0, 0, 0);
+        white-space:nowrap;
+        border:0;
       }
 
       .section-anchor{
@@ -199,7 +410,11 @@
 
       .research-direction{
         display:block;
-        margin-top:2px;
+        margin-top:5px;
+      }
+
+      .research-direction-first{
+        margin-top:15px;
       }
 
       .service-group{
@@ -430,7 +645,7 @@
       }
 
       .edu tr:not(:last-child) td{
-        border-bottom:1px solid #f0f2f4;
+        border-bottom:1px solid var(--soft-rule);
       }
 
       .edu-left{
@@ -457,7 +672,7 @@
 
       .edu-years{
         font-size:15px;
-        color:#666;
+        color:var(--muted);
         margin:2px 0 0 0;
       }
 
@@ -517,7 +732,7 @@
       }
 
       .experience tr:not(:last-child) td{
-        border-bottom:1px solid #f0f2f4;
+        border-bottom:1px solid var(--soft-rule);
       }
 
       .exp-left{
@@ -545,7 +760,7 @@
 
       .exp-years{
         margin-top:3px;
-        color:#666;
+        color:var(--muted);
         font-size:15px;
       }
 
@@ -661,6 +876,16 @@
         font-size:16px !important;
       }
 
+      .pub-venue a{
+        color:var(--venue-link);
+        text-decoration:none;
+      }
+
+      .pub-venue a:hover,
+      .pub-venue a:focus{
+        color:var(--venue-link-hover);
+      }
+
       .news-list{
         margin:0;
         padding-left:18px;
@@ -706,6 +931,13 @@
         font-size:18px !important;
         font-weight:700;
         line-height:1.25;
+        color:var(--title-link);
+        transition:color .18s ease;
+      }
+
+      a:hover .papertitle,
+      a:focus .papertitle{
+        color:var(--title-link-hover);
       }
 
       .pub-teaser{
@@ -729,7 +961,7 @@
       }
 
       .publications-table > tbody > tr:not(:last-child) > td{
-        border-bottom:1px solid #dfe6ee;
+        border-bottom:1px solid var(--pub-rule);
       }
 
       @media (max-width: 920px){
@@ -745,7 +977,8 @@
         }
 
         .top-nav-inner{
-          width:100%;
+          width:auto;
+          min-width:0;
           justify-content:flex-start;
           gap:26px;
           padding:0;
@@ -754,11 +987,38 @@
 
         .top-nav-shell{
           padding:0 14px;
+          gap:10px;
         }
 
         .top-nav a{
           padding:13px 0 10px;
           font-size:16px;
+        }
+
+        .theme-toggle{
+          width:52px;
+          height:30px;
+        }
+
+        .theme-toggle-thumb{
+          width:22px;
+          height:22px;
+        }
+
+        html[data-theme="dark"] .theme-toggle-thumb{
+          transform:translateX(22px);
+        }
+
+        .theme-toggle-icon{
+          font-size:12px;
+        }
+
+        .theme-toggle-sun{
+          left:8px;
+        }
+
+        .theme-toggle-moon{
+          right:8px;
         }
 
         .section-anchor{
@@ -875,6 +1135,12 @@
           <a href="#service">Service</a>
           <a href="#misc">Misc</a>
         </div>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false" title="Switch to dark theme">
+          <span class="theme-toggle-thumb" aria-hidden="true"></span>
+          <i class="fa-solid fa-sun theme-toggle-icon theme-toggle-sun" aria-hidden="true"></i>
+          <i class="fa-solid fa-moon theme-toggle-icon theme-toggle-moon" aria-hidden="true"></i>
+          <span class="sr-only" id="theme-toggle-label">Switch to dark theme</span>
+        </button>
       </div>
     </nav>
 
@@ -895,7 +1161,7 @@
 
                   <p class="intro-text">
                     As coding agents take on more of the world’s software, the question is shifting from whether they can write code to whether we can trust what they write. My research aims to make that trust earned, by grounding how agents are trained, evaluated, and verified in real execution. More specifically, my research spans three directions:
-                    <span class="research-direction">[<strong>Environment Engineering for Coding Agents</strong>] Realistic, executable environments and task corpora for coding-agent training and evaluation: <a href="data/SWE-SessionSift.pdf">SWE-SessionSift</a>, <a href="https://arxiv.org/abs/2607.28591">Change2Task</a>, and <a href="https://arxiv.org/abs/2609.36635">WitnessGym</a>.</span>
+                    <span class="research-direction research-direction-first">[<strong>Environment Engineering for Coding Agents</strong>] Realistic, executable environments and task corpora for coding-agent training and evaluation: <a href="data/SWE-SessionSift.pdf">SWE-SessionSift</a>, <a href="https://arxiv.org/abs/2607.28591">Change2Task</a>, and <a href="https://arxiv.org/abs/2609.36635">WitnessGym</a>.</span>
                     <span class="research-direction">[<strong>Verifiable Code Synthesis in Loop</strong>] Retrieval, execution feedback, and automated verification for iterative code synthesis and repair: <a href="https://arxiv.org/abs/2507.15664">VeriRAG</a>, <a href="https://arxiv.org/abs/2512.17371">GraphCue</a>, and <a href="https://ieeexplore.ieee.org/abstract/document/11129621">ABA-RAG</a>.</span>
                     <span class="research-direction">[<strong>Efficient Learning for Agentic AI</strong>] Resource-efficient training and reinforcement learning strategies for AI agents: <a href="https://arxiv.org/abs/2603.00569">TopoEdge</a>, <a href="https://arxiv.org/abs/2512.17344">Gover-Hybrid</a>, and <a href="https://arxiv.org/abs/2507.18076">HU-PEFT</a>.</span>
                   </p>
@@ -1078,7 +1344,7 @@
                   <img class="pub-teaser" src="images/papers/topo.png" alt="TopoEdge teaser">
                 </td>
                 <td style="padding:20px;width:75%;vertical-align:middle">
-                  <a href="https://arxiv.org/abs/2603.00569" style="text-decoration:none;">
+                  <a href="https://ieeexplore.ieee.org/abstract/document/11555473" style="text-decoration:none;">
                     <span class="papertitle" style="font-size:18px;font-weight:700;line-height:1.25;">
                       TopoEdge: Topology-Grounded Agentic Framework for Edge Networking Code Generation and Repair
                     </span>
@@ -1089,7 +1355,7 @@
                   </span>
                   <br>
                   <span class="pub-venue" style="line-height:1.5;">
-                    <a href="https://wcnc2026.ieee-wcnc.org/"><strong><em>IEEE Wireless Communications and Networking Conference (WCNC) 2026</em></strong></a>
+                    <a href="https://wcnc2026.ieee-wcnc.org/"><strong><em>IEEE Wireless Communications and Networking Conference (WCNC) 2026 Workshop (Edge-GenAI)</em></strong></a>
                   </span>
                 </td>
               </tr>
@@ -1099,7 +1365,7 @@
     <img class="pub-teaser" src="images/papers/verirag.png" alt="VeriRAG teaser">
   </td>
   <td style="padding:20px;width:75%;vertical-align:middle">
-    <a href="data/verirag.html" style="text-decoration:none;">
+    <a href="https://ieeexplore.ieee.org/abstract/document/11534732/" style="text-decoration:none;">
       <span class="papertitle" style="font-size:18px;font-weight:700;line-height:1.25;">
         VeriRAG: A Retrieval-Augmented Framework for Automated RTL Testability Repair
       </span>
@@ -1120,18 +1386,18 @@
                   <img class="pub-teaser" src="images/papers/graph.png" alt="GraphCue teaser">
                 </td>
                 <td style="padding:20px;width:75%;vertical-align:middle">
-                  <a href="https://arxiv.org/abs/2512.17371" style="text-decoration:none;">
+                  <a href="https://ieeexplore.ieee.org/abstract/document/11366572/" style="text-decoration:none;">
                     <span class="papertitle" style="font-size:18px;font-weight:700;line-height:1.25;">
                       GraphCue for SDN Configuration Code Synthesis
                     </span>
                   </a>
                   <br>
                   <span class="pub-authors" style="line-height:1.5;">
-                    <strong>Haomin Qi</strong>, Fengfei Yu, Chengbo Huang
+                    Haomin Qi, Fengfei Yu, Chengbo Huang
                   </span>
                   <br>
                   <span class="pub-venue" style="line-height:1.5;">
-                    <a href="https://ccnc2026.ieee-ccnc.org/"><strong><em>IEEE Consumer Communications & Networking Conference (CCNC) 2026</em></strong></a>
+                    <a href="https://ccnc2026.ieee-ccnc.org/"><strong><em>IEEE Consumer Communications &amp; Networking Conference (CCNC) 2026</em></strong></a>
                   </span>
                 </td>
               </tr>
@@ -1148,7 +1414,7 @@
                   </a>
                   <br>
                   <span class="pub-authors" style="line-height:1.5;">
-                    <strong>Haomin Qi</strong>, Chengbo Huang, Zihan Dai, Yunkai Gao, Min-Te Sun
+                    Haomin Qi, Chengbo Huang, Zihan Dai, Yunkai Gao, Min-Te Sun
                   </span>
                   <br>
                   <span class="pub-venue" style="line-height:1.5;">
@@ -1162,14 +1428,14 @@
                   <img class="pub-teaser" src="images/papers/hybrid.png" alt="Hybrid and Unitary PEFT teaser">
                 </td>
                 <td style="padding:20px;width:75%;vertical-align:middle">
-                  <a href="https://arxiv.org/abs/2507.18076" style="text-decoration:none;">
+                  <a href="https://www.sciencepublishinggroup.com/article/10.11648/j.ajcst.20250804.17" style="text-decoration:none;">
                     <span class="papertitle" style="font-size:18px;font-weight:700;line-height:1.25;">
                       Hybrid and Unitary PEFT for Resource-Efficient Large Language Models
                     </span>
                   </a>
                   <br>
                   <span class="pub-authors" style="line-height:1.5;">
-                    <strong>Haomin Qi</strong>, Zihan Dai, Chengbo Huang
+                    Haomin Qi, Zihan Dai, Chengbo Huang
                   </span>
                   <br>
                   <span class="pub-venue" style="line-height:1.5;">
@@ -1190,7 +1456,7 @@
                   </a>
                   <br>
                   <span class="pub-authors" style="line-height:1.5;">
-                    <strong>Haomin Qi</strong>, Chung-Ho Sin, Rosanna Yuen-Yan Chan, Victor Chun-Man Wong
+                    Haomin Qi, Chung-Ho Sin, Rosanna Yuen-Yan Chan, Victor Chun-Man Wong
                   </span>
                   <br>
                   <span class="pub-venue" style="line-height:1.5;">
@@ -1370,5 +1636,49 @@
         </tr>
       </tbody></table>
     </div>
+
+    <script>
+      (function () {
+        var toggle = document.getElementById('theme-toggle');
+        var label = document.getElementById('theme-toggle-label');
+        var media = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function updateToggle(theme) {
+          var isDark = theme === 'dark';
+          var action = isDark ? 'Switch to light theme' : 'Switch to dark theme';
+          toggle.setAttribute('aria-pressed', String(isDark));
+          toggle.setAttribute('aria-label', action);
+          toggle.setAttribute('title', action);
+          label.textContent = action;
+        }
+
+        function applyTheme(theme, remember) {
+          document.documentElement.dataset.theme = theme;
+          updateToggle(theme);
+          if (remember) {
+            try {
+              localStorage.setItem('haomin-theme', theme);
+            } catch (error) {
+              // The selected theme still applies for this visit when storage is unavailable.
+            }
+          }
+        }
+
+        updateToggle(document.documentElement.dataset.theme || 'light');
+
+        toggle.addEventListener('click', function () {
+          applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark', true);
+        });
+
+        media.addEventListener('change', function (event) {
+          try {
+            if (localStorage.getItem('haomin-theme')) return;
+          } catch (error) {
+            // Follow the system preference when storage is unavailable.
+          }
+          applyTheme(event.matches ? 'dark' : 'light', false);
+        });
+      }());
+    </script>
   </body>
 </html>
